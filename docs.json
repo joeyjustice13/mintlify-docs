@@ -1,52 +1,61 @@
 {
   "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
   "name": "World Branding",
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "favicon": "/favicon.svg",
+  "description": "How to use the World Branding app: tasks, projects, content tracker, and more.",
   "colors": {
     "primary": "#f97316",
     "light": "#fb923c",
     "dark": "#ea580c"
   },
-  "topbarCtaButton": {
-    "name": "Open the app",
-    "url": "https://app.worldbranding.com"
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   },
-  "navigation": [
-    {
-      "group": "Welcome",
-      "pages": ["index", "getting-started"]
-    },
-    {
-      "group": "Core concepts",
-      "pages": ["tasks", "projects", "documents"]
-    },
-    {
-      "group": "Your tasks",
-      "pages": [
-        "tasks/north-star",
-        "tasks/citizen",
-        "tasks/worldcode"
-      ]
-    },
-    {
-      "group": "Your projects",
-      "pages": [
-        "projects/ideation",
-        "projects/storytelling",
-        "projects/scripting",
-        "projects/lead-magnets"
-      ]
-    },
-    {
-      "group": "Tools",
-      "pages": ["content-tracker"]
+  "navigation": {
+    "groups": [
+      {
+        "group": "Welcome",
+        "pages": ["index", "getting-started"]
+      },
+      {
+        "group": "Core concepts",
+        "pages": ["tasks", "projects", "documents"]
+      },
+      {
+        "group": "Your tasks",
+        "pages": [
+          "tasks/north-star",
+          "tasks/citizen",
+          "tasks/worldcode"
+        ]
+      },
+      {
+        "group": "Your projects",
+        "pages": [
+          "projects/ideation",
+          "projects/storytelling",
+          "projects/scripting",
+          "projects/lead-magnets"
+        ]
+      },
+      {
+        "group": "Tools",
+        "pages": ["content-tracker"]
+      }
+    ]
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Open the app",
+      "href": "https://app.worldbranding.com"
     }
-  ],
-  "footerSocials": {
-    "website": "https://worldbranding.com"
+  },
+  "footer": {
+    "socials": {
+      "website": "https://worldbranding.com"
+    }
   }
 }
