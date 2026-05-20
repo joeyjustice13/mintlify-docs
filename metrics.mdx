@@ -1,75 +1,79 @@
 ---
 title: "Metrics"
-description: "Your Instagram numbers without having to open Instagram."
+description: "Your Instagram numbers without the doom-scroll."
 ---
 
-The **Metrics** tab pulls your Instagram profile and recent posts into the app so you can see what's working without context-switching. Once a day we scrape your handle (only your own profile, only public data) and update your stats.
+The **Metrics** tab pulls your Instagram profile and posts into the app so you can see what's actually working without falling into the for-you-page abyss. Once a day we hit your handle, grab the latest, and stuff it in here. Public data only. We're not snooping in your DMs.
 
-You'll see a glance version on the home page and a deeper view at **Metrics** in the sidebar.
+You get a glance version at the top of your dashboard, and the deep view at **Metrics** in the sidebar.
 
-## What gets tracked
+## What we pull
 
-For your own profile:
+For your account, daily-ish:
 
 - Follower count, following count, total post count
-- Profile picture, display name, bio
+- Profile pic, display name, bio
 - Your latest ~30 posts: caption, thumbnail, likes, comments, views, post type, posted date
 
-We snapshot follower count once a day so you get a trend line over time. We don't store anything about other accounts. We don't DM, post, or do anything you didn't ask for.
+We snapshot follower count once per day so you get a trend line as the days stack up. Other accounts? Don't care, don't store them. Posting on your behalf? Absolutely not. We pull stats. That's the whole pitch.
 
 ## Setting it up
 
-You added your Instagram handle during onboarding, so this should already be running. If for some reason it isn't, hit your name in the sidebar profile menu, open the editor, and add or fix your handle.
+You added your Instagram handle during onboarding so this should already be quietly running. If it's somehow not, click your name in the sidebar profile menu, open the editor, and add or fix the handle.
 
-The first sync runs when you click **Sync now** on the empty state. After that, the daily cron picks you up automatically.
+The first sync runs when you hit **Sync now** on the empty state. Takes ~30 seconds because Apify has to actually go visit your profile. After that, the daily cron picks you up and you don't have to think about it.
 
 ## The home page card
 
 A compact summary at the top of your dashboard:
 
-- **Profile chip** on the left: picture, handle, follower/post count, last-synced time.
-- **Last 2 weeks grid** on the right: two rows of seven cells, one per day. Filled cells = you posted that day. Empty cells = you didn't. Today's cell has an outline. Future days in the current week are dashed placeholders.
-- **View all posts** and **Refresh** buttons.
+- **Profile chip** on the left: avatar, handle, follower/post count, last-synced timestamp.
+- **Last 2 weeks grid** on the right: two rows of seven cells, one per day. Cell filled = you posted. Cell empty = you didn't. Today gets a subtle outline so you don't lose your place. Future days are dashed placeholders so the grid feels complete.
+- **View all posts** and **Refresh** buttons live up top.
 
-If you haven't posted in two weeks, a line below tells you the date of your most recent post so you're not staring at an empty grid wondering if something broke.
+If you haven't posted in 2 weeks, a one-liner below the grid tells you the date of your most recent post so you're not staring at an empty grid having an existential moment.
 
-Hovering a filled cell shows a popover with the thumbnail, caption, and engagement for that day's post(s).
+Hover any filled cell to get a little popover with the thumbnail, caption, and engagement numbers for that day's post(s).
 
 ## The Metrics page
 
-Same header layout (profile chip, last-2-week grid, refresh) plus:
+Same header layout (profile chip, last-2-week grid, refresh), plus the actual depth:
 
 ### Follower trend
 
-A line graph of your follower count over the last 90 days. Shows starting count, current count, and net change. Only renders once you have at least two days of data (so day one it's hidden, day two it appears).
+A line graph of your follower count over the last 90 days. Shows starting count, current count, and net change (positive in accent color, negative in red because that's how reality works).
+
+Heads up: this only renders once you have at least 2 daily snapshots. So day 1 it's hidden. Day 2 it shows up. We're not faking a graph from a single dot.
 
 ### All posts table
 
-Every post we've pulled in, sortable by:
+Every post we have on you, sortable by:
 
-- Date (default, newest first)
-- Likes
-- Comments
-- Views
-- **Engagement rate** = (likes + comments) ÷ follower count
+- **Date** (default, newest first, because that's how you actually think about your content)
+- **Likes**
+- **Comments**
+- **Views**
+- **Engagement rate** = (likes + comments) divided by current follower count
 
-Click any column header to sort. Click again to flip the direction.
+Click a column header to sort. Click again to flip direction. It's a table. You know how tables work.
 
 ### Filtering by type
 
-Pills above the table: **All · Reels · Image · Carousel**. Click one to narrow down. Reels and standalone video posts are grouped together since they're the same thing on modern Instagram.
+Pills above the table: **All · Reels · Image · Carousel**. Click one to narrow. Reels and standalone video posts get grouped together because on modern Instagram those are functionally the same thing (RIP IGTV, you weren't missed).
 
 ### Outliers
 
-Posts whose engagement rate is at least 1.5× your median get a small orange dot in the engagement column. Hover the dot to see how many times your median it is. This is the fastest way to find what's actually working: sort by engagement rate, look at the orange dots, study why those posts hit.
+Posts whose engagement rate is at least 1.5x your median get a small orange dot in the engagement column. Hover the dot to see the exact multiple.
+
+This is the entire reason this page exists. Sort by engagement, find the dots, study what those posts have in common. That's your content strategy update for the week, no spreadsheet needed.
 
 ## Refresh
 
-The Refresh button kicks off a fresh sync on demand. Takes ~30 seconds. Useful when you just posted and want your latest content reflected, or when something looks off.
+The Refresh button kicks off a fresh sync on demand. Takes ~30 seconds because Apify is doing real work. Use it when you just posted and want it reflected, or when something looks suspiciously stale.
 
-## Caveats
+## Caveats (the boring but important part)
 
-- **Engagement rate uses your *current* follower count for every post.** So old posts from when you had fewer followers will look lower-engagement than they actually were at the time. We'll fix this in a future update by snapshotting follower count at post time.
-- **We only pull ~30 posts per sync.** If you have a deep back catalog, only the most recent ones show up.
-- **Private accounts won't work.** Apify can't scrape what it can't see. Make sure your account is public.
-- **Engagement-rate calculations skip 0-follower accounts.** Sync once first so we have a follower count.
+- **Engagement rate uses your *current* follower count for every post.** So old posts from when you had fewer followers look weaker than they actually were at the time. We'll fix this eventually by snapshotting follower count at post time. For now: weigh recent posts against each other, not against your 2 a.m. throwback from 2023.
+- **We only pull ~30 posts per sync.** Deep back catalog? Only the most recent ones show up.
+- **Private accounts won't work.** Apify can't scrape what it can't see. Public your account if you want this to do anything.
+- **0-follower edge case:** engagement-rate math breaks at zero followers (divide by zero is still illegal in 2026). Sync once, then it works.
