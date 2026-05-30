@@ -3,9 +3,9 @@ title: "Metrics"
 description: "Your Instagram numbers without the doom-scroll."
 ---
 
-The **Metrics** tab pulls your Instagram profile and posts into the app so you can see what's actually working without falling into the for-you-page abyss. Once a day we hit your handle, grab the latest, and stuff it in here. Public data only. We're not snooping in your DMs.
+The **Metrics** tab pulls your Instagram profile and posts into the app so you can see what's actually working without falling into the for-you-page abyss (we've all been there, it's 2am, the algorithm has won). Once a day we hit your handle, grab the latest, and stuff it in here. Public data only. We're not snooping in your DMs.
 
-You get a glance version at the top of your dashboard, and the deep view at **Metrics** in the sidebar.
+You get a glance version at the top of your dashboard, and the deep view at **Metrics** in the sidebar. A small **Weekly Review** teaser card also sits on the Metrics page once your latest review is ready — one click takes you to the full memo (see [Weekly Reviews](/weekly-reviews)).
 
 ## What we pull
 
@@ -15,7 +15,7 @@ For your account, daily-ish:
 - Profile pic, display name, bio
 - Your latest ~30 posts: caption, thumbnail, likes, comments, views, post type, posted date
 
-We snapshot follower count once per day so you get a trend line as the days stack up. Other accounts? Don't care, don't store them. Posting on your behalf? Absolutely not. We pull stats. That's the whole pitch.
+We snapshot follower count once per day so you get a trend line as the days stack up. Other accounts? Don't care, don't store them. Posting on your behalf? Absolutely not, we're not THAT kind of app. We pull stats. That's the whole pitch.
 
 ## Setting it up
 
@@ -67,6 +67,8 @@ Posts whose engagement rate is at least 1.5x your median get a small orange dot 
 
 This is the entire reason this page exists. Sort by engagement, find the dots, study what those posts have in common. That's your content strategy update for the week, no spreadsheet needed.
 
+Want the AI to do that pattern-finding for you instead? That's what [Weekly Reviews](/weekly-reviews) is for. Same data, automated read, plus pre-built content ideas you can drop into your tracker.
+
 ## Refresh
 
 The Refresh button kicks off a fresh sync on demand. Takes ~30 seconds because Apify is doing real work. Use it when you just posted and want it reflected, or when something looks suspiciously stale.
@@ -76,4 +78,6 @@ The Refresh button kicks off a fresh sync on demand. Takes ~30 seconds because A
 - **Engagement rate uses your *current* follower count for every post.** So old posts from when you had fewer followers look weaker than they actually were at the time. We'll fix this eventually by snapshotting follower count at post time. For now: weigh recent posts against each other, not against your 2 a.m. throwback from 2023.
 - **We only pull ~30 posts per sync.** Deep back catalog? Only the most recent ones show up.
 - **Private accounts won't work.** Apify can't scrape what it can't see. Public your account if you want this to do anything.
-- **0-follower edge case:** engagement-rate math breaks at zero followers (divide by zero is still illegal in 2026). Sync once, then it works.
+- **0-follower edge case:** engagement-rate math breaks at zero followers (divide by zero is still illegal in 2026, the courts haven't budged). Sync once, then it works.
+
+Now go find the dots.

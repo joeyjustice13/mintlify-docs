@@ -42,7 +42,7 @@
       },
       {
         "group": "Tools",
-        "pages": ["content-tracker", "metrics"]
+        "pages": ["content-tracker", "metrics", "weekly-reviews"]
       }
     ]
   },

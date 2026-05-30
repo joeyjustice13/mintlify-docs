@@ -1,0 +1,74 @@
+---
+title: "Weekly Reviews"
+description: "Every Monday: a memo on what's actually working, with pre-written content ideas tuned to your wins."
+---
+
+The **Weekly Review** is the page where your Instagram data finally earns its keep. Every Monday the app pulls your last 90 days of posts, clusters them, and writes you a plain-English memo: what's working, what's dying, what to do about it, and 5 to 7 content ideas remixed from your winning patterns. The spreadsheet you've been meaning to make for 6 months but never did? We made it for you. And it talks.
+
+You'll find it in the sidebar as **Weekly Reviews**, between Metrics and Admin.
+
+## When your first one shows up
+
+The Monday cron only picks you up once your Instagram account has been connected for at least 7 days. That gives Apify enough time to sync real data instead of writing a memo about three test posts.
+
+Once you're past the 7-day mark and you have at least 5 synced posts, your first review lands automatically the next Monday at 9 a.m. ET. You don't have to do anything.
+
+If you can't wait: click **Generate now** on the empty state and we'll fire one off immediately. Same memo, just earlier.
+
+## The page layout
+
+Left rail: the **Archive** — every past week you've had a review for. Click any week to load that one in the main view. The current/newest sits at the top with a salmon left-bar.
+
+Right column: the actual review for whichever week you've selected.
+
+## What's in a review
+
+Top to bottom:
+
+### Stat strip
+
+Four mono tiles at the top, Bloomberg-terminal style:
+
+- **Top pattern ER** — the engagement rate of your strongest winning pattern, with a one-liner identifying it.
+- **Weakest ER** — same idea, for the pattern that's dragging.
+- **Posts analyzed** — how many posts went into this week's read (always ≤ 60).
+- **Patterns found** — total winning + dying clusters identified.
+
+### Headline
+
+One sentence summarizing the whole week. Usually the punchline of the entire review compressed into something you could screenshot.
+
+### What's working / What's not
+
+Two columns. Left is wins (green dot, salmon ER values), right is losses (muted dot, muted ER). Each row is a pattern: a short title, one-line evidence prose, and salmon **Posts** chips below that you can click to open the specific Instagram posts in a new tab.
+
+Chip labels are human-readable, so you'll see things like `↗ May 14 · Carousel` instead of opaque shortcodes. If a post got deleted on Instagram between sync and now, the chip falls back to the raw shortcode.
+
+### Recommendations
+
+Five-ish numbered actions Claude generated based on the patterns. Each one is a single sentence starting with a verb. Treat these like a checklist for next week.
+
+### Suggested cards
+
+Five to seven content ideas pre-built from your winning patterns. Each card has:
+
+- A **title** you could literally use as a post hook
+- Category, pillar, and format tags (matching your archetype)
+- A **seed** explaining why this idea fits your data — what winning pattern it's borrowing from and how
+
+Click **Add** on any card to drop it straight into the **Ideation** column of your Content Tracker. The seed comes along with it as the card's origin context. Click **Add all (N)** to import the whole batch in one shot.
+
+## Refresh recap
+
+The **Refresh review** button on the headline card regenerates this week's review using whatever IG data has synced since the last run. Useful if you posted a banger between Monday's cron and now and want it accounted for.
+
+Refresh is disabled if the latest review was generated less than 6 days ago. The point of a *weekly* review is to give patterns enough room to actually shift between runs.
+
+## Caveats (the small print, but read it)
+
+- **Reviews need 5+ synced posts to generate.** Posting less than ~1 a week? The cron will silently defer you until you cross the threshold. No empty-state failure, just a quiet wait. (No judgment, post when you post.)
+- **Engagement rate is current-follower-count based.** Same caveat as the Metrics page. Posts from when you were smaller look weaker than they were at the time. We'll fix this. Promise.
+- **Claude can hallucinate patterns.** The recommendations are starting points, not gospel. If a pattern doesn't match what you remember about a post, sanity-check the shortcode chips before acting on it. You're the sanity check, not the AI.
+- **Archive grows forever.** Past reviews don't auto-delete. We'll add a prune option if it ever gets unwieldy.
+
+Open the page Monday morning with coffee. Read the memo. Add the cards. Close the loop. That's the workflow.
