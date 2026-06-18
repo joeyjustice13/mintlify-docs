@@ -6,7 +6,7 @@ description: "Uploads, imported transcripts, generated docs, and groups, all in 
 The **Library** (top of the sidebar) is where every file the AI can read about you lives. Three kinds of stuff end up here:
 
 1. **Uploads**: PDFs, Word docs, markdown, text files you drop in yourself.
-2. **Imported transcripts**: Instagram Reels you've pulled in by URL. We grab the audio, transcribe it, and save the text.
+2. **Imported transcripts**: Instagram Reels you've pulled in by URL. We grab the spoken audio, the on-screen text, and the caption, then save it all as one transcript.
 3. **Generated documents**: produced by tasks. You don't upload these. They appear when you finish an interview, like little gifts from past-you (who clearly had her act together that day).
 
 All three can be attached to project chats as context using the document picker.
@@ -16,7 +16,7 @@ All three can be attached to project chats as context using the document picker.
 Top right of the page, single **+ Add** button. Opens a small menu with two options:
 
 - **Upload file**: pick a `.pdf`, `.docx`, `.txt`, or `.md` from your computer. The app extracts the text in the background so the AI can read it later. Big files take a few seconds. Be patient.
-- **Import from URL**: paste an Instagram Reel link. We pull the video, transcribe the audio with AI, and save the transcript as a document. Usually 10 to 30 seconds depending on length. You can also tag it as "my post" if it's your own reel so you can find your stuff later.
+- **Import from URL**: paste an Instagram Reel link. We pull the video, transcribe the spoken words with AI, grab any on-screen text and the caption, and save it all as one transcript document. Usually 10 to 30 seconds depending on length. You can also tag it as "my post" if it's your own reel so you can find your stuff later.
 
 Once it's in, it behaves like any other document. Attach it to chats, drop it in groups, whatever.
 
@@ -29,6 +29,8 @@ The **Groups** pill swaps the view over to your groups (more below).
 ## Imported transcripts
 
 Click any imported transcript card to expand it and read the full text. You'll see the original Instagram username, the post date, and a "View original" link back to Instagram. If you tagged it as your own post when you imported it, there's a little "Your transcript" badge so you can spot it at a glance.
+
+Your own posts also get a ⭐ star toggle. Starred (the default) means the ghostwriter is allowed to learn your voice from that transcript. Tap it off for the reels that aren't really *you*, the off-brand collab or the one where you read someone else's script, so the AI only mimics the posts you actually want to sound like.
 
 This is how you build a personal corpus of your own voice over time. The AI can reference your past reels when you're writing new ones. Stop reinventing yourself every Tuesday. Your voice is consistent. The app will help you prove it.
 
@@ -45,6 +47,8 @@ A document can live in multiple groups. Groups don't move the file, they're just
 ## Attaching docs to a chat
 
 In any chat, click the paperclip icon in the input area to open the document picker. Pick individual docs or whole groups. Selected docs go to the AI as part of the conversation context for that session.
+
+Pick a whole group and it rides along as a single tidy chip in the input (a **📁 Group · 5** instead of five loose ones); remove the chip to drop them all at once. And if you just uploaded or imported something elsewhere and don't see it in the list, hit the refresh icon in the picker header to pull it in.
 
 This is *additive*: you're adding docs on top of whatever prereq-task documents are already injected automatically. Pile it on if you need to.
 
