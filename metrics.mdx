@@ -5,7 +5,7 @@ description: "Every synced Instagram post, ranked and remixable."
 
 The **Posts** tab pulls your Instagram posts into the app so you can see what's actually working without falling into the for-you-page abyss (we've all been there, it's 2am, the algorithm has won). Once a day we hit your handle, grab the latest, and stuff it in here. Public data only. We're not snooping in your DMs.
 
-Quick map of where your numbers live now: your **dashboard** (the home page) shows the insight layer, so followers, your weekly posting ring, engagement, your top post, the follower trend, your posting rhythm, and your current breakout posts all greet you the moment you log in. The **Posts** page is the deep view: the full sortable table of everything we've synced, with Remix one click away. Find it in the sidebar under **Insights → Posts**, or from the dashboard (account chip up top, or **All posts** on Winning now). Outlier alert notifications land you there too.
+Quick map of where your numbers live now: your **dashboard** (the home page) shows the insight layer, so followers, reach, posts against your weekly goal, engagement, the follower trend, and your best posts all greet you the moment you log in. The **Posts** page is the deep view: the full sortable table of everything we've synced, with Remix one click away. Find it in the sidebar under **Insights → Posts**, or from the dashboard (account chip up top, or **All posts** on Winning now). Outlier alert notifications land you there too.
 
 ## What we pull
 
@@ -13,24 +13,30 @@ For your account, daily-ish:
 
 - Follower count, following count, total post count
 - Profile pic, display name, bio
-- Your latest ~30 posts: caption, thumbnail, likes, comments, views, post type, posted date
+- Your posts from the last 90 days: caption, thumbnail, likes, comments, views, post type, posted date
 
-We snapshot follower count once per day so you get a trend line as the days stack up. Other accounts? Don't care, don't store them. Posting on your behalf? Absolutely not, we're not THAT kind of app. We pull stats. That's the whole pitch.
+We snapshot follower count once per day so you get a trend line as the days stack up. Other accounts? Only the ones you choose to watch on [Radar](/radar). Posting on your behalf? Absolutely not, we're not THAT kind of app. We pull stats. That's the whole pitch.
 
 ## Setting it up
 
 You added your Instagram handle during onboarding so this should already be quietly running. If it's somehow not, click your name in the sidebar profile menu, open the editor, and add or fix the handle.
 
-The first sync runs when you hit **Sync now** on your dashboard's connect card. Takes ~30 seconds because Apify has to actually go visit your profile. After that, the daily cron picks you up and you don't have to think about it.
+Your first sync runs on its own in the background right after onboarding, because we have to actually go visit your profile. If your numbers still haven't shown up after a minute or two, hit **Sync now** on your dashboard. After that, the daily sync picks you up and you don't have to think about it.
 
 ## Your dashboard (the glance version)
 
 The home page carries the summary so you never have to go digging for the basics:
 
-- **Pulse strip**: followers with a 30-day delta and mini trend line, a weekly posting ring (3 posts a week is the goal, the ring fills as you post), average engagement over the last 30 days vs. the 30 before, and your top post's multiple vs. your median.
-- **Follower trend**: your snapshot line over the last 90 days.
-- **Posting rhythm**: a 28-day grid, one cell per day, filled when you posted. Hover a filled cell for that day's post(s). Below it, your **best posting window** (day + 3-hour slot, computed from your own last 90 days, in your own timezone). The window only appears once you have 10+ scored posts, because a "best time" based on two data points is astrology.
-- **Winning now**: your top 3 outlier posts from the last 30 days, each with a multiplier chip and a Remix button. There's a second tab for your niche, fed by [Radar](/radar).
+- **The figures row**: followers, reach over the last 7 days, posts this week against your goal, and engagement.
+- **Today's Move**: the one most useful thing to do next, picked from your data. Not feeling it? **See other ideas** shows the runners-up.
+- **Followers, last 30 days**: your snapshot line, with the high and low labeled.
+- **Winning now**: your top 3 outlier posts from the last 30 days, each with a multiplier chip and a link to that post on the Posts page.
+- **This week's plan**: what's scheduled on your tracker this week, each one a click away from its card.
+- **Your posting goal**: a ring that fills as you post. The goal is yours to set (3 is the default). Change it in your profile or in your [Monday week setup](/weekly-reviews#monday-week-setup).
+- **From your weekly review**: the headline from your latest [Weekly Review](/weekly-reviews).
+- **Insight cards**: a carousel at the bottom with how your formats compare, which posts spiked, and how your pillar mix is doing.
+
+Once you have 10+ scored posts, the greeting up top can also name your **strongest posting window** (day + 3-hour slot, computed from your own last 90 days, in your own timezone). Under 10 we say nothing, because a "best time" based on two data points is astrology.
 
 The dashboard is the read. The Posts page is where you act on it.
 
@@ -75,17 +81,18 @@ You can remix any post, not just outliers. Remixing your worst post is a choice,
 
 ### Outlier alerts
 
-When the daily sync spots a fresh outlier (a post from the last 7 days running at 1.5x your median or better), you get a notification in the app: which post, the exact multiple, and a one-tap link straight into **Remix** for that post while the algorithm is still in love with you. Tap it and the breakdown's already loading, no hunting through the table. One alert per post, ever. We celebrate, we don't spam. Your dashboard's "Do this next" card will also nudge you about it, because a post taking off is exactly the moment to act.
+The chip shows up at 1.5x, but alerts are pickier, because a ping for every decent post is just noise. A post earns one when it's less than 2 days old, running at 2.5x your median or better, and in your own top 10% for the last 90 days. Then you get a notification in the app (which post, the exact multiple, and a one-tap link straight into **Remix** while the algorithm is still in love with you) and an email with the same news. Tap the notification and the breakdown's already loading, no hunting through the table. One alert per post, ever, and 2 a week at most. We celebrate, we don't spam. **Today's Move** on your dashboard will also nudge you about it, because a post taking off is exactly the moment to act.
 
 ## Refresh
 
-The Refresh button kicks off a fresh sync on demand. Takes ~30 seconds because Apify is doing real work. Use it when you just posted and want it reflected, or when something looks suspiciously stale.
+The Refresh button kicks off a fresh sync on demand. Takes ~30 seconds because we're doing real work. You get one a day (it resets at midnight Pacific, and the automatic syncs don't use it up). Use it when you just posted and want it reflected, or when something looks suspiciously stale.
 
 ## Caveats (the boring but important part)
 
 - **Engagement rate uses your *current* follower count for every post.** So old posts from when you had fewer followers look weaker than they actually were at the time. We'll fix this eventually by snapshotting follower count at post time. For now: weigh recent posts against each other, not against your 2 a.m. throwback from 2023.
-- **We only pull ~30 posts per sync.** Deep back catalog? Only the most recent ones show up.
-- **Private accounts won't work.** Apify can't scrape what it can't see. Public your account if you want this to do anything.
+- **We pull the last 90 days.** Deep back catalog? It doesn't come along for the ride.
+- **Private accounts won't work.** We can't pull what we can't see. Public your account if you want this to do anything.
+- **Changed your handle?** If we can't find your account anymore, the Posts page says so in a banner instead of quietly showing old numbers. Fix the handle in your profile.
 - **0-follower edge case:** engagement-rate math breaks at zero followers (divide by zero is still illegal in 2026, the courts haven't budged). Sync once, then it works.
 
 Now go find the chips.

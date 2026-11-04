@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "WorldBranding",
-  "description": "How to use the WorldBranding app: tasks, the Studio, projects, content tracker, metrics, and more.",
+  "description": "How to use the WorldBranding app: tasks, the Studio, the content tracker, your Instagram numbers, and more.",
   "colors": {
     "primary": "#f97316",
     "light": "#fb923c",
@@ -17,11 +17,18 @@
     "groups": [
       {
         "group": "Welcome",
-        "pages": ["index", "getting-started", "faq"]
+        "pages": [
+          "index",
+          "getting-started",
+          "faq"
+        ]
       },
       {
         "group": "Core concepts",
-        "pages": ["tasks", "projects", "documents"]
+        "pages": [
+          "tasks",
+          "documents"
+        ]
       },
       {
         "group": "Your tasks",
@@ -33,17 +40,28 @@
         ]
       },
       {
-        "group": "Your projects",
+        "group": "Tools",
         "pages": [
+          "studio",
+          "ideas",
+          "content-tracker",
+          "course",
+          "recordings",
+          "scripts-from-your-team",
+          "metrics",
+          "radar",
+          "weekly-reviews"
+        ]
+      },
+      {
+        "group": "Projects (replaced by the Studio)",
+        "pages": [
+          "projects",
           "projects/ideation",
           "projects/storytelling",
           "projects/scripting",
           "projects/lead-magnets"
         ]
-      },
-      {
-        "group": "Tools",
-        "pages": ["studio", "content-tracker", "recordings", "metrics", "radar", "weekly-reviews"]
       }
     ]
   },
