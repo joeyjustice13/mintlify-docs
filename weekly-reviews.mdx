@@ -17,22 +17,22 @@ If you can't wait: click **Generate now** on the empty state and we'll fire one 
 
 ## The page layout
 
-Left rail: the **Archive** — every past week you've had a review for. Click any week to load that one in the main view. The current/newest sits at the top with a salmon left-bar.
+Left rail: **Past reviews**, every past week you've had a review for. Click any week to load that one in the main view. The current/newest sits at the top, and the week you're reading gets highlighted.
 
 Right column: the actual review for whichever week you've selected.
 
 ## What's in a review
 
-Top to bottom:
+Here's what's in it:
 
 ### Stat strip
 
-Four mono tiles at the top, Bloomberg-terminal style:
+Four plain figures in a row:
 
-- **Top pattern ER** — the engagement rate of your strongest winning pattern, with a one-liner identifying it.
-- **Weakest ER** — same idea, for the pattern that's dragging.
-- **Posts analyzed** — how many posts went into this week's read (always ≤ 60).
-- **Patterns found** — total winning + dying clusters identified.
+- **Top pattern**: the engagement rate of your strongest winning pattern, with a one-liner identifying it.
+- **Weakest pattern**: same idea, for the pattern that's dragging.
+- **Posts analyzed**: how many posts went into this week's read (always ≤ 60).
+- **Patterns found**: total winning + dying clusters identified.
 
 ### Headline
 
@@ -40,7 +40,7 @@ One sentence summarizing the whole week. Usually the punchline of the entire rev
 
 ### What's working / What's not
 
-Two columns. Left is wins (green dot, salmon ER values), right is losses (muted dot, muted ER). Each row is a pattern: a short title, one-line evidence prose, and salmon **Posts** chips below that you can click to open the specific Instagram posts in a new tab.
+Two columns. Left is wins (bolder ER values), right is losses (muted ER values). Each row is a pattern: a short title, one-line evidence prose, and **Posts** chips below that you can click to open the specific Instagram posts in a new tab.
 
 Chip labels are human-readable, so you'll see things like `↗ May 14 · Carousel` instead of opaque shortcodes. If a post got deleted on Instagram between sync and now, the chip falls back to the raw shortcode.
 
@@ -56,13 +56,13 @@ Five to seven content ideas pre-built from your winning patterns. Each card has:
 
 - A **title** you could literally use as a post hook
 - Category, pillar, and format tags (matching your archetype)
-- A **seed** explaining why this idea fits your data — what winning pattern it's borrowing from and how
+- A **seed** explaining why this idea fits your data: what winning pattern it's borrowing from and how
 
 Click **Add** on any card to drop it straight into the **Idea** column of your Content Tracker. The seed comes along with it as the card's origin context. Click **Write** to add it *and* open the card for Write for me. Click **Add all (N)** to import the whole batch in one shot.
 
 ## Refresh recap
 
-The **Refresh review** button on the headline card regenerates this week's review using whatever IG data has synced since the last run. Useful if you posted a banger between Monday's cron and now and want it accounted for.
+The **Refresh review** button next to the headline regenerates this week's review using whatever IG data has synced since the last run. Useful if you posted a banger between Monday's cron and now and want it accounted for.
 
 Refresh is disabled if the latest review was generated less than 6 days ago. The point of a *weekly* review is to give patterns enough room to actually shift between runs.
 
@@ -71,6 +71,6 @@ Refresh is disabled if the latest review was generated less than 6 days ago. The
 - **Reviews need 5+ synced posts to generate.** Posting less than ~1 a week? The cron will silently defer you until you cross the threshold. No empty-state failure, just a quiet wait. (No judgment, post when you post.)
 - **Engagement rate is current-follower-count based.** Same caveat as the Posts page. Posts from when you were smaller look weaker than they were at the time. We'll fix this. Promise.
 - **Claude can hallucinate patterns.** The recommendations are starting points, not gospel. If a pattern doesn't match what you remember about a post, sanity-check the shortcode chips before acting on it. You're the sanity check, not the AI.
-- **Archive grows forever.** Past reviews don't auto-delete. We'll add a prune option if it ever gets unwieldy.
+- **Past reviews grow forever.** They don't auto-delete. We'll add a prune option if it ever gets unwieldy.
 
 Open the page Monday morning with coffee. Read the memo. Add the cards. Close the loop. That's the workflow.
