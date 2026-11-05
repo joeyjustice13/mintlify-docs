@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "WorldBranding",
-  "description": "How to use the WorldBranding app: tasks, the Studio, the content tracker, your Instagram numbers, and more.",
+  "name": "WorldBuilder",
+  "description": "How to use the WorldBuilder app: tasks, the Studio, the content tracker, your Instagram numbers, and more.",
   "colors": {
     "primary": "#f97316",
     "light": "#fb923c",
