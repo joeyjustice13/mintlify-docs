@@ -35,6 +35,7 @@
         "pages": [
           "tasks/north-star",
           "tasks/citizen",
+          "tasks/flag",
           "tasks/worldcode",
           "tasks/first-five-videos"
         ]
